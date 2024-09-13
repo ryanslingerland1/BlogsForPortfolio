@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploring the Features of My 2009 Twitter Visualization Project">
+    <title>2009 Twitter Visualization Project - Feature Breakdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #5fd9ff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 4px;
+            font-family: monospace;
+        }
+
+        a {
+            color: #01abe9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .link {
+            border: solid 1px black;
+            display: flex;
+            justify-content: center;
+            padding: 0%;
+            background-color: #01abe9;
+        }
+        .link a{
+            color: black !important;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exploring the Features of My 2009 Twitter Visualization Project</h1>
+        <div class="link">
+            <a href="https://retrotwittervisualizer.onrender.com">retrotwittervisualizer.onrender.com</a>
+        </div>
+        <p>Welcome to the ultimate throwback to 2009 Twitter, a time when Twitter was much simpler, and tweets were limited to 140 characters. This project is a visual representation of a database containing nearly one million tweets from 2009. In this post, I’ll walk you through the main features of the site, why I built them, and how they work behind the scenes.</p>
+
+        <h2>Feature 1: The Title Image & The Theme</h2>
+        <p>The first thing you’ll notice when you visit the site is a title image that represents the theme of Twitter in its early days. The design is minimalistic, echoing Twitter’s simple interface at the time. The image is positioned centrally to capture attention, followed by interactive buttons below it.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>I wanted the site to feel nostalgic, almost like a time capsule. The minimalist design helps focus the user on the content, which is the real star of the show—tweets from 2009.</p>
+
+        <h4>How It Works:</h4>
+        <p>The image is responsive, using CSS to adjust its size based on the screen width, so it looks good on all devices. The image is positioned using flexbox to ensure it stays centered.</p>
+
+        <h2>Feature 2: Interactive Buttons</h2>
+        <p>Below the title image, you’ll see two main buttons: one for loading a single tweet and another for toggling between a single tweet view and a scrollable feed. These buttons are central to how users interact with the site.</p>
+
+        <ul>
+            <li><strong>Load Single Tweet:</strong> Clicking this button fetches a random tweet from the 2009 database and displays it along with a randomly generated profile picture.</li>
+            <li><strong>Toggle View:</strong> This button switches between the single-tweet view and the scrollable feed view, which continuously loads random tweets from the 2009 database.</li>
+        </ul>
+
+        <h4>Why I Did It:</h4>
+        <p>I wanted to provide multiple ways to experience the tweets. The single view gives you a close-up look, while the scrollable feed recreates the feel of a real-time Twitter timeline, adding to the immersive experience.</p>
+
+        <h4>How It Works:</h4>
+        <p>The buttons are styled using CSS for a clean look and interactive hover effects. JavaScript and React handle the logic for fetching random tweets from a pre-loaded list and for switching between the two modes. A state variable manages whether the page is in "single view" or "scroll view."</p>
+
+        <h2>Feature 3: Hover Question Mark</h2>
+        <p>Next to the buttons, you’ll notice a small question mark icon. When hovered over, it reveals a tooltip with a brief description of what the project is about. This feature adds an element of user guidance without overwhelming the interface.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>I wanted to give users a quick way to understand what the site is about without having a large block of text always visible. This keeps the design clean and helps users focus on the tweets.</p>
+
+        <h4>How It Works:</h4>
+        <p>This is implemented using pure CSS. When the user hovers over the question mark, a tooltip box appears with the project description. The <code>:hover</code> pseudo-class triggers the display of the hidden text.</p>
+
+        <h2>Feature 4: Single Tweet View</h2>
+        <p>In the single tweet view, users can load one tweet at a time, which includes the date, username, and content of the tweet, along with a randomly generated profile picture for added immersion.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>This feature allows users to take their time and focus on a single tweet. It mimics how you might read through tweets one at a time, without the noise of a fast-scrolling timeline.</p>
+
+        <h4>How It Works:</h4>
+        <p>When you click the "Load Single Tweet" button, the app fetches a random tweet from an array. It also generates a random profile picture using an API. Both the tweet and profile picture are then rendered to the screen.</p>
+
+        <h2>Feature 5: Scrollable Feed View</h2>
+        <p>The scrollable feed view simulates the experience of a Twitter timeline. A new tweet is added to the feed every couple of seconds, creating a dynamic, constantly updating view of 2009 tweets.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>I wanted to replicate the feeling of an active Twitter feed, where you constantly scroll through new content. This gives users a more engaging and lively experience, allowing them to see a variety of tweets without needing to click a button each time.</p>
+
+        <h4>How It Works:</h4>
+        <p>When you switch to scroll view, the app enters a mode where it uses the <code>setInterval</code> function to fetch and display a new random tweet every 2 seconds. This is managed using state variables in React to ensure that the feed updates seamlessly and the view switches smoothly.</p>
+
+        <h2>Feature 6: Profile Picture for Every Tweet</h2>
+        <p>To make the experience feel more real, each tweet comes with a randomly generated profile picture. The pictures are sourced from a profile picture API, which randomly generates male or female avatars.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>Adding profile pictures enhances the authenticity of the tweets. It gives the feeling that these tweets came from real users, even though they were made in 2009. The avatars make the site feel like a real social media experience.</p>
+
+        <h4>How It Works:</h4>
+        <p>When a tweet is fetched, a random gender is chosen (either male or female), and the corresponding API call generates a unique avatar. This avatar is displayed alongside each tweet, adding to the visual variety of the feed.</p>
+
+        <h2>Feature 7: Responsive Design</h2>
+        <p>The entire site is responsive, meaning it works well on desktops, tablets, and smartphones. The layout adapts based on the screen size, ensuring that both the title image, buttons, and tweets are all displayed cleanly no matter the device.</p>
+
+        <h4>Why I Did It:</h4>
+        <p>With so many users accessing the web on mobile devices, I wanted to make sure the site was accessible and easy to navigate on any platform. Ensuring a smooth user experience across all devices is key to the success of the project.</p>
+
+        <h4>How It Works:</h4>
+        <p>The design is based on a responsive CSS layout using flexbox and media queries. The site automatically adjusts elements like font size, button size, and layout, ensuring they display well on both small and large screens.</p>
+
+        <h2>Conclusion</h2>
+        <p>Building this Twitter visualization project has been a fun trip down memory lane. From fetching tweets from 2009 to creating a smooth, responsive user interface, each feature was designed to bring the early days of Twitter to life. I hope you enjoy exploring the site as much as I enjoyed creating it!</p>
+
+        <p>Feel free to reach out if you have any questions or suggestions. Happy tweeting!</p>
+    </div>
+</body>
+</html>
